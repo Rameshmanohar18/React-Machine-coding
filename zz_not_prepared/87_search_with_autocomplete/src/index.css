@@ -1,0 +1,61 @@
+/* styles.css */
+.wrapper {
+  max-width: 500px;
+  margin: 40px auto;
+  font-family: sans-serif;
+}
+
+.control {
+  position: relative;
+}
+
+.control.is-loading::after {
+  content: '⏳';
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #888;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #3273dc;
+}
+
+.list {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-item {
+  display: block;
+  padding: 10px 14px;
+  cursor: pointer;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item:hover {
+  background-color: #f0f0f0;
+}

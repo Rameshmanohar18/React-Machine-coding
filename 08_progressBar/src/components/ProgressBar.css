@@ -1,0 +1,43 @@
+.progressbar {
+  position: relative;
+  width: 350px;
+  height: 35px;
+  background-color: #eee;
+}
+
+.progressPercent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #eee;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+}
+.playBtns {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  display: block;
+  margin: 5rem auto;
+  border: none;
+  border-radius: 3px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #a66cff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: gray;
+  color: white;
+}
+
+.progressbar-filled {
+  height: 100%;
+  background-color: #a66cff;
+  transition: width 0.5s;
+}

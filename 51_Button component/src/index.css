@@ -1,0 +1,10 @@
+.button.PRIMARY {
+  color: white;
+  background: rgb(136, 136, 220);
+  outline: none;
+}
+
+.button.SECONDARY {
+  color: white;
+  background: black;
+}

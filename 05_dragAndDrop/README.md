@@ -1,0 +1,1 @@
+<img src="./drang_and_drop.gif">

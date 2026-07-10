@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────── */
+body {
+  font-family: 'Sora', sans-serif;
+  background: #0d0f14;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────────
+   LAYOUT — MOBILE FIRST (< 480px)
+───────────────────────────────────────────── */
+.app {
+  width: 100%;
+  padding: 1rem 1rem 3rem;
+}
+
+/* ─────────────────────────────────────────────
+   HEADER
+───────────────────────────────────────────── */
+.app-header {
+  text-align: center;
+  padding: 1.5rem 0 1.25rem;
+  border-bottom: 1px solid #1e2530;
+  margin-bottom: 1.75rem;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f9eff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.app-subtitle {
+  margin-top: 0.4rem;
+  color: #6b7a99;
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────────── */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.count-badge {
+  background: #1e2d45;
+  color: #4f9eff;
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #2a3f5f;
+}
+
+.list-header {
+  margin-bottom: 1rem;
+}
+
+/* ─────────────────────────────────────────────
+   ADD EMPLOYEE FORM
+───────────────────────────────────────────── */
+.add-form {
+  background: #131820;
+  border: 1px solid #1e2530;
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.form-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c8d6f0;
+  margin-bottom: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* single column on mobile */
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-input {
+  background: #0d1117;
+  border: 1px solid #252d3d;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 0.88rem;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: #4f9eff;
+}
+
+.form-input::placeholder {
+  color: #3d4f6a;
+}
+
+.form-input.input-error {
+  border-color: #f87171;
+}
+
+.form-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.field-error {
+  font-size: 0.75rem;
+  color: #f87171;
+}
+
+.error-banner,
+.success-banner {
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.error-banner {
+  background: #2d1515;
+  border: 1px solid #7f1d1d;
+  color: #fca5a5;
+}
+
+.success-banner {
+  background: #0d2318;
+  border: 1px solid #14532d;
+  color: #86efac;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+  /* full width on mobile */
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────────
+   EMPLOYEE CARDS  (Q1 template)
+───────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* single column on mobile */
+  gap: 1rem;
+}
+
+.employee-card {
+  background: #131820;
+  border: 1px solid #1e2530;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.employee-card:hover {
+  border-color: #2a3f5f;
+  transform: translateY(-2px);
+}
+
+.card-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-meta {
+  font-size: 0.78rem;
+  color: #6b7a99;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label {
+  color: #4f9eff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  margin-right: 0.3rem;
+}
+
+/* ─────────────────────────────────────────────
+   PAGINATION  (Q4)
+───────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.btn-page {
+  background: #131820;
+  border: 1px solid #252d3d;
+  border-radius: 8px;
+  color: #c8d6f0;
+  padding: 0.55rem 1rem;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-page:hover:not(:disabled) {
+  background: #1a2235;
+  border-color: #4f9eff;
+  color: #4f9eff;
+}
+
+/* Q4 — disabled: grayed out, no pointer */
+.btn-page:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.page-info {
+  font-size: 0.82rem;
+  color: #6b7a99;
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 90px;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────
+   LOADING / ERROR STATES
+───────────────────────────────────────────── */
+.state-box {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7a99;
+  font-size: 0.9rem;
+}
+
+.state-box.error {
+  color: #f87171;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #1e2530;
+  border-top-color: #4f9eff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   TABLET  (≥ 768px)
+───────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .app {
+    padding: 1.5rem 2rem 3.5rem;
+  }
+
+  .app-title {
+    font-size: 1.85rem;
+  }
+
+  .app-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .add-form {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    /* 2-column form on tablet */
+  }
+
+  .btn-primary {
+    width: auto;
+    /* shrink to content */
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-page {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .page-info {
+    min-width: 110px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   DESKTOP  (≥ 1024px)
+───────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 3rem 5rem;
+  }
+
+  .app-header {
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .app-title {
+    font-size: 2.25rem;
+  }
+
+  .app-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .add-form {
+    padding: 2rem 2.5rem;
+  }
+
+  .form-title {
+    font-size: 1.05rem;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3-column form on desktop */
+    gap: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3-column cards on desktop */
+  }
+
+  .employee-card {
+    padding: 1.5rem;
+  }
+
+  .pagination {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   WIDE DESKTOP  (≥ 1440px)
+───────────────────────────────────────────── */
+@media (min-width: 1440px) {
+  .app {
+    max-width: 1300px;
+    padding: 2.5rem 4rem 6rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4-column cards on wide screens */
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(5, 1fr);
+    /* all 5 fields in one row */
+  }
+}

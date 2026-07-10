@@ -1,0 +1,1 @@
+<img src="./stop_watch.gif">

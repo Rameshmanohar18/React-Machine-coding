@@ -1,0 +1,1 @@
+<img src='./email_template.gif'>

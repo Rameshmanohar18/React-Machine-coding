@@ -1,0 +1,106 @@
+.container {
+  height: 100vh;
+  /* Full viewport height */
+  width: 100vw;
+  /* Full viewport width */
+  display: grid;
+  /* Enable CSS Grid */
+
+  /* Define 3 columns: 
+     - 100px fixed width for nav
+     - 1fr (remaining space) for main content
+     - 100px fixed width for right sidebar 
+
+// Your 3 columns with 4 grid lines:
+
+Line 1          Line 2          Line 3          Line 4
+  |               |               |               |
+  |   Column 1    |   Column 2    |   Column 3    |
+  |    (100px)    |     (1fr)     |    (100px)    |
+  |               |               |               |
+
+// So when you say grid-column: 1 / 4
+// You're saying: "Start at Line 1, end at Line 4" = spans all 3 columns
+*/
+
+  grid-template-columns: 100px 1fr 100px;
+
+  /* Define 3 rows:
+     - 40px fixed height for header
+     - 1fr (remaining space) for middle section
+     - 40px fixed height for footer */
+  grid-template-rows: 40px 1fr 40px;
+}
+
+/* General styling for all grid items */
+header,
+footer,
+nav,
+main,
+aside {
+  padding: 10px;
+  /* Add internal spacing */
+}
+
+/* Header styling - spans all 3 columns */
+header {
+  grid-column: 1 / 4;
+  /* Start at column 1, end at column 4 */
+  background-color: red;
+}
+
+/* Nav styling - first column only */
+nav {
+  grid-column: 1 / 2;
+  /* Start at column 1, end at column 2 */
+  background-color: green;
+}
+
+/* Main content styling - middle column only */
+main {
+  grid-column: 2 / 3;
+  /* Start at column 2, end at column 3 */
+  background-color: plum;
+}
+
+/* Right sidebar styling - last column only */
+aside {
+  grid-column: 3 / 4;
+  /* Start at column 3, end at column 4 */
+  background-color: greenyellow;
+}
+
+/* Footer styling - spans all 3 columns */
+footer {
+  grid-column: 1 / 4;
+  /* Start at column 1, end at column 4 */
+  background-color: blue;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  /* When viewport is 768px or less: */
+
+  .container {
+    /* Switch to single column layout with 5 equal rows:
+       - header
+       - nav
+       - main content
+       - right sidebar
+       - footer */
+    grid: repeat(5, 1fr) / 1fr;
+    /* Equivalent to:
+       grid-template-rows: repeat(5, 1fr); ----> 5 equal rows for stacking all elements vertically;  ----> grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+       grid-template-columns: 1fr; */
+  }
+
+  /* Make all elements span the single column */
+  header,
+  footer,
+  nav,
+  main,
+  aside {
+    grid-column: 1 / 2;
+    /* All elements now span only column 1 */
+  }
+}

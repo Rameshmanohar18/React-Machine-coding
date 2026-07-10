@@ -1,0 +1,1 @@
+<img src="./skeleton_loader.gif">

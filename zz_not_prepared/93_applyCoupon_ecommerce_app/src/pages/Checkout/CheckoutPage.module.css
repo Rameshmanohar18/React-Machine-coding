@@ -1,0 +1,179 @@
+.page {
+ min-height: 100vh;
+ background: #f4f6fb;
+ padding: 32px 16px;
+ font-family: 'Segoe UI', sans-serif;
+}
+
+.pageInner {
+ max-width: 900px;
+ margin: 0 auto;
+}
+
+.pageTitle {
+ font-size: 26px;
+ font-weight: 700;
+ margin-bottom: 24px;
+ color: #1a1a2e;
+}
+
+.grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px;
+}
+
+@media (max-width: 640px) {
+ .grid {
+  grid-template-columns: 1fr;
+ }
+}
+
+/* Card */
+.card {
+ background: #fff;
+ border-radius: 14px;
+ padding: 24px;
+ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.cardTitle {
+ font-size: 17px;
+ font-weight: 700;
+ margin-bottom: 20px;
+ color: #1a1a2e;
+}
+
+/* Hotel Info */
+.hotelInfo {
+ display: flex;
+ align-items: center;
+ gap: 14px;
+ margin-bottom: 16px;
+}
+
+.hotelIcon {
+ font-size: 36px;
+}
+
+.hotelName {
+ font-weight: 700;
+ font-size: 15px;
+ margin: 0;
+}
+
+.hotelLocation {
+ color: #666;
+ font-size: 13px;
+ margin: 4px 0 0;
+}
+
+.divider {
+ border-top: 1px solid #eee;
+ margin: 16px 0;
+}
+
+/* Row */
+.row {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 12px;
+ align-items: center;
+}
+
+.label {
+ color: #555;
+ font-size: 14px;
+}
+
+.value {
+ font-weight: 600;
+ font-size: 14px;
+}
+
+/* Discount Row */
+.discountRow {
+ background: #f0fdf4;
+ border-radius: 8px;
+ padding: 8px 10px;
+ margin-bottom: 12px;
+}
+
+.discountLabel {
+ color: #16a34a;
+ font-size: 14px;
+ font-weight: 600;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+}
+
+.discountValue {
+ color: #16a34a;
+ font-weight: 700;
+ font-size: 14px;
+}
+
+.removeBtn {
+ background: none;
+ border: none;
+ color: #ef4444;
+ cursor: pointer;
+ font-size: 12px;
+ font-weight: 600;
+ padding: 2px 6px;
+ border-radius: 4px;
+ text-decoration: underline;
+}
+
+/* Total */
+.totalRow {
+ margin-bottom: 20px;
+}
+
+.totalLabel {
+ font-weight: 700;
+ font-size: 16px;
+}
+
+.totalValue {
+ font-weight: 800;
+ font-size: 20px;
+ color: #1a1a2e;
+}
+
+/* Buttons */
+.couponBtn {
+ width: 100%;
+ padding: 11px;
+ margin-bottom: 12px;
+ background: #fff;
+ border: 2px dashed #6366f1;
+ border-radius: 10px;
+ color: #6366f1;
+ font-weight: 700;
+ font-size: 14px;
+ cursor: pointer;
+ transition: background 0.2s;
+}
+
+.couponBtn:hover {
+ background: #f5f3ff;
+}
+
+.payBtn {
+ width: 100%;
+ padding: 13px;
+ background: linear-gradient(135deg, #6366f1, #8b5cf6);
+ border: none;
+ border-radius: 10px;
+ color: #fff;
+ font-weight: 700;
+ font-size: 16px;
+ cursor: pointer;
+ transition: opacity 0.2s;
+}
+
+.payBtn:hover {
+ opacity: 0.9;
+}

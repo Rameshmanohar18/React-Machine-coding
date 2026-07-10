@@ -1,0 +1,42 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  todos: [
+    { id: 1, text: 'Learn React', completed: false },
+    { id: 2, text: 'Learn Redux Toolkit', completed: false },
+    { id: 3, text: 'Build TODO App', completed: true },
+  ],
+};
+
+const todoSlice = createSlice({
+  name: 'todos',
+  initialState,
+  reducers: {
+    addTodo: (state, action) => {
+      state.todos.push({
+        id: Date.now(),
+        text: action.payload,
+        completed: false,
+      });
+    },
+    editTodo: (state, action) => {
+      const { id, text } = action.payload;
+      const todo = state.todos.find((todo) => todo.id === id);
+      if (todo) {
+        todo.text = text;
+      }
+    },
+    deleteTodo: (state, action) => {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+    toggleTodo: (state, action) => {
+      const todo = state.todos.find((todo) => todo.id === action.payload);
+      if (todo) {
+        todo.completed = !todo.completed;
+      }
+    },
+  },
+});
+
+export const { addTodo, editTodo, deleteTodo, toggleTodo } = todoSlice.actions;
+export default todoSlice.reducer;

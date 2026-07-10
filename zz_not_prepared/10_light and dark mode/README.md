@@ -1,0 +1,1 @@
+<img src="./light_dark_mode.gif">

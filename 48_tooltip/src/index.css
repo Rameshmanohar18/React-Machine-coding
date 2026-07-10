@@ -1,0 +1,226 @@
+/* Tooltip Trigger */
+.tooltip-trigger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip Container */
+.tooltip {
+  position: fixed;
+  z-index: 9999;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  max-width: 250px;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* BELOW ARE THE EXTRA ONES  */
+/* Tooltip Arrow */
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Arrow Positioning */
+.tooltip-arrow-top {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-arrow-bottom {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent #333 transparent;
+}
+
+.tooltip-arrow-left {
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent #333;
+}
+
+.tooltip-arrow-right {
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 6px 6px 0;
+  border-color: transparent #333 transparent transparent;
+}
+
+/* Demo Container */
+.demo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 20px;
+}
+
+/* Demo Sections */
+.demo-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Position Grid */
+.position-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  padding: 40px;
+  justify-items: center;
+}
+
+/* Trigger Grid */
+.trigger-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  padding: 40px;
+  justify-items: center;
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  padding: 40px;
+  justify-items: center;
+}
+
+/* Demo Button */
+.demo-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.demo-button:hover {
+  background-color: #0056b3;
+}
+
+/* Demo Input */
+.demo-input {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.demo-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Practical Examples */
+.practical-examples {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.example-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon Button */
+.icon-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  background-color: #0056b3;
+}
+
+.icon-button.danger {
+  background-color: #dc3545;
+}
+
+.icon-button.danger:hover {
+  background-color: #c82333;
+}
+
+/* Info Icon */
+.info-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .position-grid,
+  .trigger-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .practical-examples {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

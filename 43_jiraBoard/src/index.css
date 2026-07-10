@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── App ─────────────────────────────────────────── */
+.app {
+  min-height: 100vh;
+  background: #0d1117;
+  padding: 32px 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Header ──────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e6edf3;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 13px;
+  color: #8b949e;
+  letter-spacing: 0.3px;
+}
+
+/* ── Add Card Section ────────────────────────────── */
+.add-section {
+  max-width: 520px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.add-section input {
+  flex: 1;
+  padding: 11px 16px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #e6edf3;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.add-section input:focus {
+  border-color: #58a6ff;
+}
+
+.add-section input::placeholder {
+  color: #484f58;
+}
+
+.add-btn {
+  padding: 11px 20px;
+  background: #238636;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #2ea043;
+}
+
+/* ── Board ───────────────────────────────────────── */
+.board {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ── Column ──────────────────────────────────────── */
+.column {
+  flex: 1;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 480px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.column.drag-over {
+  background: #1c2128;
+  border-color: #58a6ff;
+}
+
+/* ── Column Header ───────────────────────────────── */
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}
+
+.column-header.todo {
+  border-bottom: 1px solid rgba(108, 142, 191, 0.2);
+}
+
+.column-header.in-progress {
+  border-bottom: 1px solid rgba(240, 165, 0, 0.2);
+}
+
+.column-header.done {
+  border-bottom: 1px solid rgba(92, 184, 92, 0.2);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot.todo {
+  background: #6c8ebf;
+}
+
+.dot.in-progress {
+  background: #f0a500;
+}
+
+.dot.done {
+  background: #5cb85c;
+}
+
+.col-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  flex: 1;
+}
+
+.col-title.todo {
+  color: #6c8ebf;
+}
+
+.col-title.in-progress {
+  color: #f0a500;
+}
+
+.col-title.done {
+  color: #5cb85c;
+}
+
+.badge {
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge.todo {
+  background: rgba(108, 142, 191, 0.12);
+  color: #6c8ebf;
+}
+
+.badge.in-progress {
+  background: rgba(240, 165, 0, 0.12);
+  color: #f0a500;
+}
+
+.badge.done {
+  background: rgba(92, 184, 92, 0.12);
+  color: #5cb85c;
+}
+
+/* ── Cards Container ─────────────────────────────── */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  color: #484f58;
+  font-size: 13px;
+  padding-top: 40px;
+}
+
+/* ── Card ────────────────────────────────────────── */
+.card {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 12px 14px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: opacity 0.15s ease, transform 0.15s ease, border-color 0.15s;
+}
+
+.card:hover {
+  border-color: #484f58;
+}
+
+.card.dragging {
+  opacity: 0.45;
+  transform: scale(0.97);
+}
+
+.card-text {
+  font-size: 14px;
+  color: #c9d1d9;
+  line-height: 1.5;
+  flex: 1;
+  word-break: break-word;
+}
+
+/* ── Delete Button ───────────────────────────────── */
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #484f58;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: color 0.15s, background 0.15s;
+}
+
+.delete-btn:hover {
+  color: #f85149;
+  background: rgba(248, 81, 73, 0.1);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+  }
+
+  .column {
+    min-height: 300px;
+  }
+}

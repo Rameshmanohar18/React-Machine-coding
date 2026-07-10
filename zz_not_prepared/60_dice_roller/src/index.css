@@ -1,0 +1,375 @@
+/* MAIN CONTAINER STYLING */
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  /* Centers the container horizontally on the page --> Example: Container sits in middle of screen, not left-aligned */
+}
+
+/* TITLE STYLING */
+.title {
+  text-align: center;
+  /* Example: Title appears in middle, not left side */
+
+  margin-bottom: 20px;
+  /* Adds 20px space below title
+  Example: Creates gap between title and input section */
+
+  font-weight: bold;
+  /* Makes title text thick and eye-catching */
+}
+
+/* INPUT SECTION LAYOUT */
+.input-section {
+  display: flex;
+  /* Arranges input and button side by side in a row
+  Example: [Input Field] [Roll Button] - horizontally aligned */
+
+  justify-content: center;
+  /* Centers the input and button horizontally
+  Example: Both elements sit in middle of container */
+
+  align-items: center;
+  /* Example: Prevents button from being higher/lower than input */
+
+  gap: 10px;
+  /* Adds 10px space between input field and button
+  Example: Creates small gap so they don't touch */
+
+  margin-bottom: 30px;
+  /* Adds 30px space below input section
+  Example: Creates separation before dice results appear */
+
+}
+
+/* INPUT FIELD STYLING */
+.input-field {
+  padding: 10px 15px;
+  /* Adds space inside input: 10px top/bottom, 15px left/right
+  Example: Makes input feel spacious and easy to click */
+
+  font-size: 18px;
+  /* Makes text inside input larger and readable */
+  border: 3px solid #333;
+  /* Creates thick dark border around input
+  Example: #333 = dark gray, 3px = thick visible border */
+
+  border-radius: 8px;
+  /* Rounds the corners of input field */
+
+  width: 300px;
+  /* Sets input field to exactly 300px wide */
+  text-align: center;
+  /* Centers the number text inside input field
+  Example: "6" appears in middle of field, not left side */
+
+}
+
+/* ROLL BUTTON STYLING */
+.roll-button {
+  padding: 10px 20px;
+  /* Adds space inside button: 10px top/bottom, 20px left/right
+  Example: Makes button feel substantial and easy to click */
+
+  font-size: 18px;
+  background-color: #f0f0f0;
+  /* Light gray background color
+  Example: #f0f0f0 = very light gray, almost white */
+
+  border: 3px solid #333;
+  /* Same thick dark border as input field
+  Example: Creates visual consistency between input and button */
+
+  border-radius: 8px;
+  /* Same rounded corners as input field */
+  cursor: pointer;
+}
+
+/* DICE RESULTS CONTAINER */
+.dice-container {
+  background-color: #d0d0d0;
+  /* Light gray background for dice area
+  Example: #d0d0d0 = medium light gray, matches your image */
+
+  padding: 20px;
+  /* Adds 20px space inside container around dice
+  Example: Creates border space so dice don't touch edges */
+
+  border-radius: 15px;
+  /* Rounds corners of entire dice container
+  Example: Creates smooth, modern rounded rectangle */
+
+  border: 3px solid #999;
+  /* Medium gray border around dice container
+  Example: #999 = medium gray, defines container boundary */
+
+}
+
+/* DICE ROW LAYOUT */
+.dice-row {
+  display: flex;
+  /* Arranges dice horizontally in a row
+  Example: [Die1] [Die2] [Die3] - side by side */
+
+  justify-content: center;
+  /* Centers dice in each row
+  Example: If only 2 dice in row, they sit in middle */
+
+  gap: 15px;
+  /* Adds 15px space between each die
+  Example: Creates visual separation between adjacent dice */
+
+  margin-bottom: 15px;
+  /* Adds 15px space below each row
+  Example: Creates vertical gap between rows of dice */
+
+}
+
+.dice-row:last-child {
+  margin-bottom: 0;
+  /* Removes bottom margin from final row
+  Example: Prevents extra space after last row of dice */
+
+}
+
+/* INDIVIDUAL DIE STYLING */
+.die {
+  width: 80px;
+  /* Sets each die to 80px wide */
+  height: 80px;
+  /* Sets each die to 80px tall
+  Example: Creates perfect 80x80 pixel squares */
+
+  background-color: white;
+  /* White background for each die */
+  border: 3px solid #333;
+  /* Dark border around each die
+  Example: Creates visible die edges like real dice */
+
+  border-radius: 12px;
+  /* Rounds die corners
+  Example: Makes dice look more realistic, less sharp */
+
+  display: flex;
+  /* Allows centering of dots inside die */
+  align-items: center;
+  /* Vertically centers dots container */
+  justify-content: center;
+  /* Horizontally centers dots container */
+  position: relative;
+  /* Allows absolute positioning of dots inside */
+}
+
+/* DOTS CONTAINER */
+.dots {
+  width: 60px;
+  /* Dots area is 60px wide (smaller than 80px die)
+  Example: Leaves 10px margin on each side inside die */
+
+  height: 60px;
+  /* Dots area is 60px tall
+  Example: Creates consistent dot placement area */
+
+  position: relative;
+  /* Allows dots to be positioned absolutely within this area */
+}
+
+/* INDIVIDUAL DOT STYLING */
+.dot {
+  position: absolute;
+  /* Allows precise positioning of each dot */
+  width: 12px;
+  /* Each dot is 12px wide */
+  height: 12px;
+  /* Each dot is 12px tall
+  Example: Creates perfect 12x12 pixel circles */
+
+  background-color: #333;
+  /* Dark color for dots (same as borders) */
+  border-radius: 50%;
+  /* Makes dots perfectly circular
+  Example: 50% border-radius on square = circle */
+
+}
+
+/* DICE PATTERN EXPLANATIONS */
+
+/* DIE VALUE 1: Single center dot */
+.dots-1 .dot-1 {
+  top: 50%;
+  /* Positions dot at vertical center */
+  left: 50%;
+  /* Positions dot at horizontal center */
+  transform: translate(-50%, -50%);
+  /* Adjusts for dot's own size to center perfectly
+  Example: Without transform, dot's top-left would be centered
+
+                                     With transform, dot's center is centered */
+}
+
+/* DIE VALUE 2: Diagonal dots (top-left and bottom-right) */
+.dots-2 .dot-1 {
+  top: 15px;
+  /* First dot 15px from top edge */
+  left: 15px;
+  /* First dot 15px from left edge
+  Example: Places dot in top-left corner area */
+
+}
+
+.dots-2 .dot-2 {
+  bottom: 15px;
+  /* Second dot 15px from bottom edge */
+  right: 15px;
+  /* Second dot 15px from right edge
+  Example: Places dot in bottom-right corner area
+
+  Result: Diagonal line from top-left to bottom-right */
+}
+
+/* DIE VALUE 3: Diagonal line with center dot */
+.dots-3 .dot-1 {
+  top: 15px;
+  /* Top-left dot */
+  left: 15px;
+}
+
+.dots-3 .dot-2 {
+  top: 50%;
+  /* Center dot */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dots-3 .dot-3 {
+  bottom: 15px;
+  /* Bottom-right dot */
+  right: 15px;
+  /* Example: Creates diagonal line of 3 dots */
+}
+
+/* DIE VALUE 4: Four corner dots */
+.dots-4 .dot-1 {
+  top: 15px;
+  left: 15px;
+}
+
+/* Top-left */
+.dots-4 .dot-2 {
+  top: 15px;
+  right: 15px;
+}
+
+/* Top-right */
+.dots-4 .dot-3 {
+  bottom: 15px;
+  left: 15px;
+}
+
+/* Bottom-left */
+.dots-4 .dot-4 {
+  bottom: 15px;
+  right: 15px;
+}
+
+/* Bottom-right */
+/* Example: Forms square pattern with dots in all four corners */
+
+/* DIE VALUE 5: Four corners plus center */
+.dots-5 .dot-1 {
+  top: 15px;
+  left: 15px;
+}
+
+/* Top-left */
+.dots-5 .dot-2 {
+  top: 15px;
+  right: 15px;
+}
+
+/* Top-right */
+.dots-5 .dot-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center dot */
+}
+
+.dots-5 .dot-4 {
+  bottom: 15px;
+  left: 15px;
+}
+
+/* Bottom-left */
+.dots-5 .dot-5 {
+  bottom: 15px;
+  right: 15px;
+}
+
+/* Bottom-right */
+/* Example: Four corners + center = traditional 5-dot pattern */
+
+/* DIE VALUE 6: Two columns of three dots each */
+.dots-6 .dot-1 {
+  top: 15px;
+  left: 15px;
+}
+
+/* Top-left */
+.dots-6 .dot-2 {
+  top: 15px;
+  right: 15px;
+}
+
+/* Top-right */
+.dots-6 .dot-3 {
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  /* Middle-left (only vertical centering) */
+}
+
+.dots-6 .dot-4 {
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  /* Middle-right (only vertical centering) */
+}
+
+.dots-6 .dot-5 {
+  bottom: 15px;
+  left: 15px;
+}
+
+/* Bottom-left */
+.dots-6 .dot-6 {
+  bottom: 15px;
+  right: 15px;
+}
+
+/* Bottom-right */
+/* Example: Creates two vertical columns of 3 dots each
+   Left column: top-left, middle-left, bottom-left
+   Right column: top-right, middle-right, bottom-right */
+
+/*
+VISUAL LAYOUT EXAMPLE:
+┌─────────────────────────────────────┐
+│           Number of Dice            │ ← .title
+│                                     │
+│    ┌─────────────┐  ┌──────────┐    │ ← .input-section
+│    │      6      │  │   Roll   │    │
+│    └─────────────┘  └──────────┘    │
+│                                     │
+│  ┌─────────────────────────────────┐ │ ← .dice-container
+│  │  ┌───┐  ┌───┐  ┌───┐           │ │ ← .dice-row
+│  │  │ ● │  │●●●│  │●●●│           │ │ ← .die elements
+│  │  └───┘  └───┘  └●●●┘           │ │
+│  │                                 │ │
+│  │  ┌───┐  ┌───┐  ┌───┐           │ │ ← .dice-row
+│  │  │●●●│  │ ● │  │●●●│           │ │
+│  │  │●●●│  │●●●│  │ ● │           │ │
+│  │  └───┘  └───┘  └●●●┘           │ │
+│  └─────────────────────────────────┘ │
+└─────────────────────────────────────┘
+*/

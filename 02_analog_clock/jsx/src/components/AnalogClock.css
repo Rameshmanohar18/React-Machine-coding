@@ -1,0 +1,32 @@
+/* Styling for the outer clock container */
+.clock {
+  width: 400px; /* Sets the clock's width to 400 pixels, defining its overall size */
+  height: 400px; /* Sets the clock's height to 400 pixels, ensuring a square shape for a circular clock */
+  position: relative; /* Allows child elements (like clock face and hands) to be positioned relative to this container */
+  border-radius: 50%; /* Makes the clock circular by rounding the corners fully */
+  border: 4px solid black; 
+}
+
+.hand {
+  background: black; /* Sets the hand color to black */
+  height: 6px; 
+  position: absolute;
+  top: 50%; /* Aligns the top of the hand to the vertical center of the clock face */
+  transform-origin: 100%; /* Sets the rotation pivot point to the right end of the hand, enabling rotation from one end */
+}
+
+.hour-hand {
+  width: 30%; 
+  right: 50%; /* Positions the right end of the hour hand at the clock's horizontal center, aligning it with the pivot point */
+}
+
+.min-hand {
+  width: 40%;
+  right: 50%; 
+}
+
+.second-hand {
+  width: 45%; 
+  right: 50%; 
+  background-color: red;
+}

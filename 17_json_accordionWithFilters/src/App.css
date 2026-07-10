@@ -1,0 +1,53 @@
+.objective-container {
+    position: relative;
+    padding-left: 40px;
+    margin: 10px;
+}
+
+.objective-header, .key-result {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.user-icon {
+    width: 20px;
+    margin-right: 10px; /* Space between icon and text */
+    position: relative;
+}
+
+.toggle-icon {
+    cursor: pointer;
+    margin-right: 5px;
+    position: relative;
+}
+
+.key-results {
+    position: relative;
+    margin-top: 5px;
+    padding-left: 80px;
+    margin-bottom: 20px;
+}
+
+/* Vertical line */
+.objective-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 70px; /* Line up with the user-icon horizontally */
+    bottom: 0;
+    border-left: 2px solid #ccc;
+}
+
+/* Horizontal line for parent */
+
+
+/* Horizontal line for child */
+.key-result::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -50px; /* Adjust to make sure it connects correctly */
+    width: 20px; /* Ensure it reaches the icon */
+    border-top: 2px solid #ccc;
+}

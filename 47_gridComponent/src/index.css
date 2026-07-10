@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+.grid-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  box-sizing: border-box;
+}
+
+.demo-box {
+  border: 2px solid #333;
+  padding: 20px;
+  text-align: center;
+  background: #f5f5f5;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,1 @@
+## The entire application code is in .js and .jsx format without any test cases

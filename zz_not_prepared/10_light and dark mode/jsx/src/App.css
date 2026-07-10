@@ -1,0 +1,69 @@
+.App {
+  font-family: 'Ubuntu', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#light {
+  background-color: #f3ebf6;
+}
+
+#dark {
+  background-color: rgb(10, 10, 10);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#light .switch label {
+  color: black;
+}
+
+#dark .switch label {
+  color: white;
+}
+
+.slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.switch-button {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 34px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Slider ball when it is in lightMode */
+.switch-button .slider {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+/* Slider ball when it is in darkMode */
+/* We are adding one extra property to the slider in darkMode */
+
+.switch-button-on .slider {
+  transform: translateX(26px); /* Adjust this value based on your switch size */
+}

@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Card ────────────────────────────────────────── */
+.app {
+  padding: 24px;
+}
+
+.poll-widget {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  width: 620px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Question ────────────────────────────────────── */
+.poll-question {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+/* ── Options list ────────────────────────────────── */
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Single row ──────────────────────────────────── */
+.poll-row {
+  position: relative;
+  /* needed so the fill div can be positioned behind text */
+  border-radius: 8px;
+  background: #dbeafe;
+  /* light blue — the "empty" part of the bar */
+  padding: 14px 16px;
+  cursor: pointer;
+  overflow: hidden;
+  /* clip the fill so it doesn't spill outside the rounded corners */
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+/* Selected row gets a blue border — matches the mock */
+.poll-row--selected {
+  border-color: #3b82f6;
+}
+
+.poll-row:hover {
+  opacity: 0.9;
+}
+
+/* ── Fill bar ─────────────────────────────────────── */
+/* Darker blue rectangle behind the text; width set via inline style */
+.poll-row__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /* full height of the row */
+  background: #bfdbfe;
+  /* slightly darker blue for the filled portion */
+  transition: width 0.4s ease;
+  /* smooth animation when votes change */
+  border-radius: 8px 0 0 8px;
+  /* only round the left side */
+}
+
+/* ── Text layer ──────────────────────────────────── */
+/* Sits above the fill bar */
+.poll-row__content {
+  position: relative;
+  /* z-index only works on positioned elements */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poll-row__label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Vote count in muted gray next to the label */
+.poll-row__count {
+  font-size: 14px;
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* Percentage on the right, bold */
+.poll-row__percent {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ── Total ───────────────────────────────────────── */
+.poll-total {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #94a3b8;
+}

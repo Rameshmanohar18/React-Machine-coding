@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: monospace;
+  background-color: #222;
+}
+
+.clock {
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.time {
+  font-size: 48px;
+  color: #0ff;
+  font-weight: bold;
+}
+
+.ampm {
+  color: beige;
+}
+
+/* Optional */
+.colon {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

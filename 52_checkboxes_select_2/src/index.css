@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: #dff3ff;
+  padding: 30px;
+  width: 260px;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+
+.option-label {
+  font-size: 28px;
+  font-weight: 700;
+  color: gray;
+}
+
+.active-good {
+  color: red;
+}
+
+.active-fast {
+  color: blue;
+}
+
+.active-cheap {
+  color: green;
+}
+
+.checkbox {
+  width: 28px;
+  height: 28px;
+  accent-color: gray;
+}
+
+.checkbox-good {
+  accent-color: red;
+}
+
+.checkbox-fast {
+  accent-color: blue;
+}
+
+.checkbox-cheap {
+  accent-color: green;
+}

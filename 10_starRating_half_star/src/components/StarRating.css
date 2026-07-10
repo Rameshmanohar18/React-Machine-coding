@@ -1,0 +1,144 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw;
+}
+
+.star-rating-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.star-rating {
+  display: block;
+  user-select: none;
+  position: relative;
+  text-align: center;
+}
+
+.star {
+  color: grey;
+  margin: 0 10px;
+  position: relative; /* Added for half-star positioning */
+  display: inline-block;
+  font-size: 90px; /* Moved font-size here from .star-rating */
+  cursor: pointer;
+  transition: color 0.2s; /* Smooth color transition */
+  line-height: 1; /* Prevent vertical alignment issues */
+}
+
+.star.full {
+  color: gold;
+}
+
+/* 
+  Half star container styles
+  When a star has the 'half' class, it shows a half-filled star
+*/
+.star.half {
+  color: grey; /* Base color remains grey */
+  pointer-events: auto; /* Ensure mouse events work properly */
+}
+
+/* 
+  This wrapper contains both the empty and half-filled star
+*/
+.star-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 1; /* Prevent layout shifts */
+}
+
+/* 
+  Empty star background for half-star
+  This provides the grey background for the right half
+*/
+.star-empty {
+  position: relative;
+  color: grey;
+  display: inline-block; /* Ensure proper layout */
+}
+
+/* 
+  Half-filled star overlay
+  This creates the gold left-half of the star using CSS clipping
+  Example: When rating is 2.5, the 3rd star shows this half-filled effect
+*/
+.star-half-filled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: gold;
+  overflow: hidden;
+  width: 50%; /* Only show left 50% of the star */
+  display: inline-block;
+  pointer-events: none; /* Prevent interference with mouse events */
+}
+
+/* Modified rating message - now positioned below stars without absolute positioning */
+.rating-message {
+  font-weight: bold;
+  font-size: 44px;
+  margin-top: 20px; /* Space between stars and message */
+  white-space: nowrap; /* Prevents text from wrapping */
+  transition: opacity 0.3s; /* Smooth transition for the text appearance */
+  text-align: center;
+  display: block;
+}
+
+/* Show rating message on hover - enhanced visibility */
+.star-rating-wrapper:hover .rating-message {
+  opacity: 1; /* Show text on hover */
+}
+
+/* 
+  Optional: Add hover effect for individual stars
+  This makes it clearer which star is being hovered
+*/
+.star:hover {
+  transform: scale(1.05); /* Reduced scale to prevent glitching */
+  transition: transform 0.1s ease;
+  z-index: 10; /* Ensure hovered star is on top */
+}
+
+/* 
+  Optional: Add a subtle animation when rating changes
+  This provides visual feedback when a rating is selected
+*/
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply pulse animation to the last selected star */
+.star.full:last-of-type {
+  animation: pulse 0.3s ease-out;
+}
+
+/* 
+  Media query for responsive design
+  Adjusts sizes for smaller screens
+*/
+@media (max-width: 768px) {
+  .star-rating {
+    font-size: 60px;
+  }
+
+  .rating-message {
+    font-size: 32px;
+  }
+
+  .star {
+    margin: 0 5px;
+  }
+}
