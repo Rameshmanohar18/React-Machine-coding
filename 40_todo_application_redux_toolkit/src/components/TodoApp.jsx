@@ -45,7 +45,7 @@ const TodoApp = () => {
 
   return (
     <div className='todo_app_container'>
-      <h1>TODO App</h1>
+      <h1>40- TODO App using Redux Toolkit</h1>
 
       <div>
         <input

@@ -43,7 +43,7 @@ const TodoApp = () => {
 
   return (
     <div className='todo_app_container'>
-      <h1>TODO App (Context API)</h1>
+      <h2>42-TODO App Using (Context API)</h2>
 
       <div>
         <input
