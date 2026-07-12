@@ -10,6 +10,8 @@ export default function App() {
     return anotherValue + count;
   }, [anotherValue]);
 
+
+  
   return (
     <div className='App'>
       <p>Count: {count}</p>

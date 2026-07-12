@@ -19,6 +19,8 @@ const App = () => {
   return (
     <div>
       <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      <h2>Current count:{count}</h2>
+      <h2>Previous count :{previousCount ?? 0} </h2>
     </div>
   );
 };

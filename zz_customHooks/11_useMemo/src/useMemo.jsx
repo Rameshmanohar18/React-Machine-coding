@@ -32,8 +32,9 @@ export function useMemoPolyfill(factory, deps) {
   }
 
   // From here on, assume deps is an array (or handle invalid cases if needed)
-
   // First render: initialize
+
+  
   if (ref.current === null) {
     const value = factory();
     ref.current = {
@@ -42,7 +43,7 @@ export function useMemoPolyfill(factory, deps) {
     };
     return value;
   }
-
+  
   // Subsequent renders
   if (isEqualDeps(deps, ref.current.deps)) {
     return ref.current.value; // eslint-disable-line react-hooks/refs

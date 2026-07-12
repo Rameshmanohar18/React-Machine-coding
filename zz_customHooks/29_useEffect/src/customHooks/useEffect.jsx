@@ -26,6 +26,8 @@ const useEffectCustom = (effect, deps) => {
   const cleanupRef = useRef(null);
   const isFirstRender = useRef(true);
 
+
+  
   useLayoutEffect(() => {
     const shouldRun =
       deps === undefined || // no deps array — run every render

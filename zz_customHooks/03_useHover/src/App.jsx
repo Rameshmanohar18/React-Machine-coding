@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div>
-      <p ref={hoverRef} style={{ color: isHovering ? 'blue' : 'black' }}>
+      <p ref={hoverRef} style={{ color: isHovering ? 'yellow' : 'black' }}>
         {isHovering
           ? "You're hovering over me!"
           : "I'm not being hovered over."}

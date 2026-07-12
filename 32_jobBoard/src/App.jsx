@@ -1,6 +1,6 @@
 import JobPosting from './JobPosting';
 import usePaginatedJobs from './usePaginatedJobs';
-
+ 
 export default function App() {
   // Extract all the pagination logic and state from our custom hook
   // This returns: { jobs: [], loading: boolean, loadingMore: boolean, hasMore: boolean, loadMore: function }
@@ -9,7 +9,7 @@ export default function App() {
   // Show loading screen while fetching initial job IDs
   // This only shows on the very first load, not when loading more jobs
   if (loading) {
-    return (
+    return ( 
       <div className='app'>
         <h1 className='title'>Hacker News Jobs Board</h1>
         <p className='loading'>Loading...</p>

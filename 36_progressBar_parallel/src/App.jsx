@@ -6,7 +6,7 @@ const App = () => {
     <div>
       <ProgressBars />
     </div>
-  );
+  );   
 };
 
 export default App;

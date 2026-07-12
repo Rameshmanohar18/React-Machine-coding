@@ -6,7 +6,7 @@
 // i) bars ---> empty array ([]) ---> holds array of progress bar objects with id and progress values
 
 // Step 2: COMPONENT STRUCTURE
-
+    
 // I'll directly jump on the return JSX template
 
 // i) main div with 'app-container' className
